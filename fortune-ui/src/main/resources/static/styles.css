@@ -1,0 +1,75 @@
+body {
+    font-family: sans-serif;
+    background: white;
+}
+
+h1 {
+    font-weight: bold;
+    font-size: 3em;
+    color: black;
+}
+
+#container {
+    text-align: left;
+    margin: 2em;
+}
+
+#fortune {
+    font-family: 'Merriweather', serif;
+    font-size: 5em;
+    margin: 0.5em;
+    background: #eee;
+    padding: 0.3em;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    -moz-border-radius: 8px;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+#fortune-source {
+    font-size: 0.8em;
+    color: #aaa;
+    text-align: center;
+}
+
+#auto-reload {
+    text-align: center;
+    margin: 2em;
+    font-size: 0.8em;
+    color: #888;
+}
+
+#auto-reload input {
+    margin-right: 0.4em;
+}
+
+#footer {
+    font-size: 75%;
+    color: #aaa;
+    margin-top: 2em;
+    text-align: right;
+    line-height: 0.8em;
+}
+
+#footer a {
+    color: #888;
+}
+
+@media (max-width: 800px) {
+    body {
+        font-size: 12px;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    #fortune {
+        font-size: 3em;
+        margin: 0.1em;
+    }
+
+    #fortune-source {
+        margin: 3em;
+    }
+}

@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Fortune Teller</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Merriweather:700i" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://unpkg.com/normalize.css@8.0.0/normalize.css"/>
+    <link rel="stylesheet" href="styles.css"/>
+    <script type="text/javascript" src="script.js"></script>
+</head>
+<body>
+<div id="container">
+    <div id="banner">
+        <h1 id="message">What the future holds?</h1>
+    </div>
+    <div id="fortune"></div>
+    <div id="fortune-source"></div>
+    <div id="auto-reload">
+        <form>
+            <label><input type="checkbox" onclick="toggleAutoReload(this)">Enable auto-reload</label>
+        </form>
+    </div>
+    <div id="footer">
+        <p>Curious about how it works? <a href="https://github.com/alexandreroman/fortune-teller">
+            Check out the source code!</a></p>
+        <p>Powered by <a href="https://pivotal.io/platform">Pivotal Cloud Foundry</a> and <a
+                href="https://cloud.spring.io">Spring Cloud</a>.</p>
+    </div>
+</div>
+</body>
+</html>
