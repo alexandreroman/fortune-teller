@@ -26,7 +26,7 @@ import javax.annotation.PostConstruct
  * REST controller exposing fortunes to other microservices.
  */
 @RestController
-class FortuneController(private val repo: FortuneRepository) {
+class FortuneController(private val fortuneService: FortuneService) {
     private val logger = LoggerFactory.getLogger(javaClass)
     private lateinit var host: String
 
@@ -38,7 +38,7 @@ class FortuneController(private val repo: FortuneRepository) {
 
     @GetMapping("/v1/random")
     fun getRandomFortune(): FortuneResponse {
-        val fortune = repo.getRandom()
+        val fortune = fortuneService.randomFortune()
         logger.info("Random fortune: {}", fortune)
         return FortuneResponse(fortune, host)
     }

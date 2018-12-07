@@ -47,7 +47,7 @@ $ java -jar fortune-ui/target/fortune-ui.jar
 ```
 
 Go to `http://localhost:8080`:
-<img src="https://i.imgur.com/xZmsAic.png"/>
+<img src="https://i.imgur.com/ghv2Qkw.png"/>
 
 You may want to start more processes. All you need is to set a different port for each process:
 ```shell
@@ -79,14 +79,6 @@ Now it's time to deploy the app to PCF:
 $ cf push
 ```
 
-This app is using an embedded database by default ([HSQLDB](http://hsqldb.org/)).
-You can easily bind a MySQL database:
-```shell
-$ cf create-service p.mysql db-small fortunes-db
-$ cf bind-service fortune-service fortunes-db
-$ cf restage fortune-service
-```
-
 ### Deploy to Pivotal Web Services
 
 In case you want to deploy to [Pivotal Web Services](https://run.pivotal.io)
@@ -94,13 +86,6 @@ In case you want to deploy to [Pivotal Web Services](https://run.pivotal.io)
 when pushing the app:
 ```shell
 $ cf push -f manifest-pws.yml
-```
-
-You should also use a different database service name in PWS:
-```shell
-$ cf create-service cleardb spark fortunes-db
-$ cf bind-service fortune-service fortunes-db
-$ cf restage fortune-service
 ```
 
 ## Contribute

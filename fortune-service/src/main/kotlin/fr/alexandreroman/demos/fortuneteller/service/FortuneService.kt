@@ -16,13 +16,15 @@
 
 package fr.alexandreroman.demos.fortuneteller.service
 
-import javax.persistence.*
+import com.github.javafaker.Faker
+import org.springframework.stereotype.Component
 
 /**
- * Fortune as an database entity.
+ * Service providing fortunes.
  */
-@Entity
-@Table(name = "fortunes")
-data class Fortune(
-        @Id @GeneratedValue val id: Long,
-        @Column(nullable = false) val text: String)
+@Component
+class FortuneService() {
+    private val faker = Faker()
+
+    fun randomFortune() = faker.yoda().quote()
+}

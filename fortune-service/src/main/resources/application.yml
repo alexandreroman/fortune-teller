@@ -7,10 +7,6 @@ spring:
   jackson:
     # Omit JSON property if value is null.
     default-property-inclusion: non_null
-  jpa:
-    hibernate:
-      # The database schema is dropped and recreated each time the app is started.
-      ddl-auto: create-drop
 
 management:
   endpoints:

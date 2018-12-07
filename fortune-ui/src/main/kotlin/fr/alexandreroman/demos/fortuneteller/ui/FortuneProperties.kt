@@ -28,5 +28,5 @@ data class FortuneProperties(
         /**
          * Default fortune used when the Fortune API is not available.
          */
-        val fallbackFortune: String = "Your future is unclear."
+        val fallbackFortune: String = "Fail we did."
 )
