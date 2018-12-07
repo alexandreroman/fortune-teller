@@ -1,18 +1,18 @@
 ---
 applications:
-- name: fortune-service
-  memory: 1G
-  path: fortune-service/target/fortune-service.jar
-  buildpacks:
-  - https://github.com/cloudfoundry/java-buildpack.git
-  services:
-  - service-registry
+  - name: fortune-service
+    memory: 1G
+    path: fortune-service/target/fortune-service.jar
+    buildpacks:
+      - https://github.com/cloudfoundry/java-buildpack.git
+    services:
+      - service-registry
 
-- name: fortune-ui
-  memory: 1G
-  path: fortune-ui/target/fortune-ui.jar
-  buildpacks:
-  - https://github.com/cloudfoundry/java-buildpack.git
-  services:
-  - service-registry
-  - circuit-breaker
+  - name: fortune-ui
+    memory: 1G
+    path: fortune-ui/target/fortune-ui.jar
+    buildpacks:
+      - https://github.com/cloudfoundry/java-buildpack.git
+    services:
+      - service-registry
+      - circuit-breaker
