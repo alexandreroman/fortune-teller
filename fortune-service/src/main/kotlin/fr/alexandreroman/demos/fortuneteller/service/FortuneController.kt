@@ -19,28 +19,21 @@ package fr.alexandreroman.demos.fortuneteller.service
 import org.slf4j.LoggerFactory
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RestController
-import java.net.InetAddress
-import javax.annotation.PostConstruct
 
 /**
  * REST controller exposing fortunes to other microservices.
  */
 @RestController
-class FortuneController(private val fortuneService: FortuneService) {
+class FortuneController(
+        private val fortuneService: FortuneService,
+        private val instanceInfo: InstanceInfo) {
     private val logger = LoggerFactory.getLogger(javaClass)
-    private lateinit var host: String
-
-    @PostConstruct
-    private fun init() {
-        // Get host name once and for all.
-        host = InetAddress.getLocalHost().canonicalHostName
-    }
 
     @GetMapping("/v1/random")
     fun getRandomFortune(): FortuneResponse {
         val fortune = fortuneService.randomFortune()
         logger.info("Random fortune: {}", fortune)
-        return FortuneResponse(fortune, host)
+        return FortuneResponse(fortune, instanceInfo.toString())
     }
 }
 
