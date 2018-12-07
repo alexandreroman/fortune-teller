@@ -33,7 +33,7 @@ class FortuneController(
     fun getRandomFortune(): FortuneResponse {
         val fortune = fortuneService.randomFortune()
         logger.info("Random fortune: {}", fortune)
-        return FortuneResponse(fortune, instanceInfo.toString())
+        return FortuneResponse(fortune, "$instanceInfo")
     }
 }
 

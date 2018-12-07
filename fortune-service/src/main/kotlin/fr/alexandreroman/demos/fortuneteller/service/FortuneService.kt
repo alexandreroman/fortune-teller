@@ -23,8 +23,8 @@ import org.springframework.stereotype.Component
  * Service providing fortunes.
  */
 @Component
-class FortuneService() {
+class FortuneService {
     private val faker = Faker()
 
-    fun randomFortune() = faker.yoda().quote()
+    fun randomFortune(): String = faker.yoda().quote()
 }
