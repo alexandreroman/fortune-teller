@@ -17,6 +17,7 @@
 package fr.alexandreroman.demos.fortuneteller.service
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties
+import com.fasterxml.jackson.annotation.JsonProperty
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.fasterxml.jackson.module.kotlin.readValue
 import org.springframework.beans.factory.annotation.Value
@@ -46,5 +47,7 @@ class InstanceInfoConfig {
     }
 
     @JsonIgnoreProperties(ignoreUnknown = true)
-    private data class VcapApplication(val applicationName: String?)
+    private data class VcapApplication(
+            @JsonProperty("application_name")
+            val applicationName: String?)
 }
